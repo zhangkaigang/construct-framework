@@ -1,7 +1,9 @@
 package com.zhangkaigang.service.impl;
 
+import com.zhangkaigang.dao.UserDao;
 import com.zhangkaigang.domain.User;
 import com.zhangkaigang.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +17,18 @@ import java.util.List;
 @Service()
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserDao userDao;
+
     @Override
     public List<User> findAll() {
         System.out.println("业务层：查询所有...");
-        return null;
+
+        return userDao.findAll();
+    }
+
+    @Override
+    public User findOne() {
+        return userDao.findOne();
     }
 }

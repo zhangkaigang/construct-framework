@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!-- 配置环境 -->
-    <environments default="mysql">
+    <!--<environments default="mysql">
         <environment id="mysql">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
@@ -16,13 +16,13 @@
         </environment>
     </environments>
 
-    <!-- 引入映射配置文件 -->
+    &lt;!&ndash; 引入映射配置文件 &ndash;&gt;
     <mappers>
-        <!-- 方式1：映射文件 -->
-<!--        <mapper resource="mappers/UserDao.xml"/>-->
-        <!-- 方式2：映射类 -->
+        &lt;!&ndash; 方式1：映射文件 &ndash;&gt;
+&lt;!&ndash;        <mapper resource="mappers/UserDao.xml"/>&ndash;&gt;
+        &lt;!&ndash; 方式2：映射类 &ndash;&gt;
         <mapper class="com.zhangkaigang.dao.UserDao"/>
-        <!-- 方式3：映射包 -->
-<!--        <package name="com.zhangkaigang.dao"/>-->
-    </mappers>
+        &lt;!&ndash; 方式3：映射包 &ndash;&gt;
+&lt;!&ndash;        <package name="com.zhangkaigang.dao"/>&ndash;&gt;
+    </mappers>-->
 </configuration>

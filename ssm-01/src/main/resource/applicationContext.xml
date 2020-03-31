@@ -12,4 +12,26 @@
         <!-- 配置哪些注解不扫描 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+    <!-- spring整合mybatis框架 -->
+    <!--配置连接池-->
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull"/>
+        <property name="username" value="root"/>
+        <property name="password" value="1234"/>
+    </bean>
+
+    <!--配置sqlSessionFactory工厂-->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+        <!-- 自动扫描mapping.xml文件 -->
+<!--        <property name="mapperLocations" value="classpath:mappers/*.xml"/>-->
+    </bean>
+
+    <!--配置接口所在的包-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.zhangkaigang.dao"/>
+    </bean>
 </beans>

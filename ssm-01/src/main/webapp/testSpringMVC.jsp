@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="user/findAll">测试springMVC和Spring整合</a>
+    <a href="user/findAll">测试springMVC和Spring和mybatis整合1</a>
+    <a href="user/findOne">测试springMVC和Spring和mybatis整合2</a>
 </body>
 </html>
