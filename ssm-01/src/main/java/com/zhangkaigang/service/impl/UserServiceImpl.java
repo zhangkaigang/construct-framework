@@ -12,7 +12,7 @@ import java.util.List;
  * @Date:2020/3/31
  * @Version:1.0
  */
-@Service("userService")
+@Service()
 public class UserServiceImpl implements UserService {
 
     @Override
