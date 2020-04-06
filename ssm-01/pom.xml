@@ -129,6 +129,12 @@
     </dependency>
 
     <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper</artifactId>
+      <version>3.3.9</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
       <version>3.2.0</version>

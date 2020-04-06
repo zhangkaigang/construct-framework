@@ -3,6 +3,7 @@ package com.zhangkaigang.dao;
 import com.zhangkaigang.domain.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @Date:2020/3/31
  * @Version:1.0
  */
-public interface UserDao {
+public interface UserDao extends Mapper<User> {
 
     /**
      * 查询所有
@@ -26,6 +27,7 @@ public interface UserDao {
      * @return
      */
     User findOne();
+
 
     @Insert("insert into t_user(username, age) values (#{username}, #{age})")
     void saveUser(User user);

@@ -39,4 +39,13 @@ public class UserController {
         model.addAttribute("user", user);
         return "list";
     }
+    @RequestMapping("/selectAll")
+    public String selectAll(Model model){
+        System.out.println("表现层：查询所有");
+        // 调用service方法
+        List<User> userList = userService.selectAll();
+        model.addAttribute("list", userList);
+        return "list";
+    }
+
 }

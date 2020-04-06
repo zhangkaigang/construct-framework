@@ -16,5 +16,7 @@ public interface UserService {
 
     User findOne();
 
+    List<User> selectAll();
+
     void saveUser(User user);
 }

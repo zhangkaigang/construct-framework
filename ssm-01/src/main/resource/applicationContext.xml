@@ -27,12 +27,38 @@
         <property name="dataSource" ref="dataSource"/>
 
         <!-- 自动扫描mapping.xml文件 -->
-<!--        <property name="mapperLocations" value="classpath:mappers/*.xml"/>-->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
     </bean>
 
     <!--配置接口所在的包-->
-    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zhangkaigang.dao"/>
+    </bean>-->
+
+    <!-- 通用 Mapper -->
+    <!--
+        注意这里使用tk.mybatis.spring.mapper.MapperScannerConfigure替换原来Mybatis的org.mybatis.spring.mapper.MapperScannerConfigurer。
+
+        可配参数介绍：
+            UUID：设置生成UUID的方法，需要用OGNL方式配置，不限制返回值，但是必须和字段类型匹配
+            IDENTITY：取回主键的方式，可以配置的内容看下一篇如何使用中的介绍
+            ORDER：<seletKey>中的order属性，可选值为BEFORE和AFTER
+            catalog：数据库的catalog，如果设置该值，查询的时候表名会带catalog设置的前缀
+            schema：同catalog，catalog优先级高于schema
+            seqFormat：序列的获取规则,使用{num}格式化参数，默认值为{0}.nextval，针对Oracle，可选参数一共4个，对应0,1,2,3分别为SequenceName，ColumnName, PropertyName，TableName
+            notEmpty：insert和update中，是否判断字符串类型!=’’，少数方法会用到
+            style：实体和表转换时的规则，默认驼峰转下划线，可选值为normal用实体名和字段名;camelhump是默认值，驼峰转下划线;uppercase转换为大写;lowercase转换为小写
+            enableMethodAnnotation：可以控制是否支持方法上的JPA注解，默认false。
+    -->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 配置对应接口 -->
+        <property name="basePackage" value="com.zhangkaigang.dao"/>
+        <property name="properties">
+            <value>
+                mappers=tk.mybatis.mapper.common.Mapper
+                ORDER=BEFORE
+            </value>
+        </property>
     </bean>
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->

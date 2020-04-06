@@ -11,7 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="user/findAll">测试springMVC和Spring和mybatis整合1</a>
-    <a href="user/findOne">测试springMVC和Spring和mybatis整合2</a>
+    <a href="user/findAll">测试springMVC和Spring和mybatis整合1-测试注解</a>
+    <hr>
+    <a href="user/findOne">测试springMVC和Spring和mybatis整合2-测试xml映射文件</a>
+    <hr>
+    <a href="user/selectAll">测试springMVC和Spring和通用tk-mybatis整合3</a>
 </body>
 </html>

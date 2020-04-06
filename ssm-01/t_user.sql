@@ -11,7 +11,7 @@
  Target Server Version : 50638
  File Encoding         : 65001
 
- Date: 31/03/2020 20:44:08
+ Date: 06/04/2020 16:30:07
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,8 @@ CREATE TABLE `t_user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `age` int(11) NULL DEFAULT NULL,
+  `login_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
