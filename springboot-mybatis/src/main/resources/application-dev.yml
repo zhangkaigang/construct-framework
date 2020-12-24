@@ -1,0 +1,45 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: springboot-mybatis # 应用名称
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # 日期格式
+  datasource:
+    druid: # 连接池别名
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      username: root
+      password: 1234
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+      maxActive: 100
+      maxWait: 5000
+  thymeleaf:
+    check-template-location: true
+    content-type: text/html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+mybatis:
+  #  basepackage: com.zhangkaigang.*.dao.*
+  mapper-locations: classpath*:mappers/*.xml
+
+
+
+
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+logging:
+  level:
+    #        tk.mybatis: DEBUG
+    com.zhangkaigang: DEBUG # 输出sql日志
